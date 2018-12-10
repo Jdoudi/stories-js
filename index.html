@@ -1,20 +1,89 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"> 
 
-        <title>Hello Javascript</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    </head>
-    <body>
-        <!--
-            Titre alimenté en javascript
-            ATTENTION ! Ne jamais faire ça pour un site web
-        -->
-        <h1 id="main-title"></h1>
+    <title>Hello Javascript</title>
 
-        <!--Premier script Javascript-->
-        <script src="./assets/javascript/main.js"></script>
-    </body>
+    <!-- Feuilles de style-->
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Conteneur de page : responsive en plus !!! -->
+    <div class="container">
+        <header>
+            <h1 id="main-title"></h1>
+        </header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4193a1;">
+            <!-- Brand : nom du menu -->
+            <a class="navbar-brand" href="#">Stories</a>
+            
+            <!-- Bouton 'burger' -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#stories-menu"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Contenu des éléments du menu-->
+            <div class="collapse navbar-collapse" id="stories-menu">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Toutes les stories</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link disabled" href="#">
+                            Mes stories
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Utilisateur</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Se connecter</a>
+                            <a class="dropdown-item" href="#">Se déconnecter</a>
+                            <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Changer d'utilisateur</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="Rechercher" placeholder="Saisir votre recherche" aria-label="Rechercher">
+                    <button class="btn btn-light my-2 my-sm-0" type="submit">Rechercher</button>
+                </form>
+            </div>
+        </nav>
+
+        <!-- Docking de la SPA (Single Page Application -->
+        <div app>
+            <!-- Ici, le contenu de l'application finale identifié par l'attribut "app"-->       
+            <form id="loginForm" class="form-group">
+                <label for="loginField">Identifiant</label>
+                <input type="text" name="loginField" autocomplete="off" class="form-control" placeholder="Saisir votre identifiant">
+                <label for="password">Mot de passe</label>
+                <input type="password" name="passwordField" autocomplete="off" class="form-control" placeholder="Saisir votre mot de passe">
+
+                <button type="submit" id="btnLogin" class="btn btn-success" disabled>Connexion</button>
+            </form>
+        </div>
+
+        <footer>
+            &copy; Aelion 2018
+        </footer>
+    </div>
+
+    <!--Premier script Javascript-->
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./src/user/login.class.js"></script>
+    <script src="./assets/javascript/main.js"></script>
+</body>
+
 </html>
