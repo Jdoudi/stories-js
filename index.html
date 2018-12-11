@@ -45,13 +45,10 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown active">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="#" id="userMenu" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Utilisateur</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Se connecter</a>
-                            <a class="dropdown-item" href="#">Se déconnecter</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Changer d'utilisateur</a>
+                        <!-- Options du menu utilisateur -->
+                        <div id="userMenuOptions" class="dropdown-menu hidden" aria-labelledby="userMenu">
                         </div>
                     </li>
                 </ul>
@@ -87,6 +84,7 @@
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="./src/modules/toaster/toast.class.js"></script>
+    <script src="./src/menu/menu.class.js"></script>
     <script src="./src/user/user.class.js"></script>
     <script src="./src/user/login.class.js"></script>
     <script src="./assets/javascript/main.js"></script>
