@@ -23,7 +23,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4193a1;">
             <!-- Brand : nom du menu -->
             <a class="navbar-brand" href="#">Stories</a>
-            
+
             <!-- Bouton 'burger' -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#stories-menu"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,23 +40,24 @@
                         <a class="nav-link" href="#">Toutes les stories</a>
                     </li>
                     <li class="nav-item">
-                            <a class="nav-link" href="#">
+                        <a class="nav-link" href="#">
                             Mes stories
                         </a>
                     </li>
                     <li class="nav-item dropdown active">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Utilisateur</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Se connecter</a>
                             <a class="dropdown-item" href="#">Se déconnecter</a>
                             <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Changer d'utilisateur</a>
+                            <a class="dropdown-item" href="#">Changer d'utilisateur</a>
                         </div>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="Rechercher" placeholder="Saisir votre recherche" aria-label="Rechercher">
+                    <input class="form-control mr-sm-2" type="Rechercher" placeholder="Saisir votre recherche"
+                        aria-label="Rechercher">
                     <button class="btn btn-light my-2 my-sm-0" type="submit">Rechercher</button>
                 </form>
             </div>
@@ -64,27 +65,29 @@
 
         <!-- Docking de la SPA (Single Page Application -->
         <div app>
-            <!-- Ici, le contenu de l'application finale identifié par l'attribut "app"-->       
+            <!-- Ici, le contenu de l'application finale identifié par l'attribut "app"-->
             <form id="loginForm" class="form-group">
                 <label for="loginField">Identifiant</label>
                 <input type="text" name="loginField" autocomplete="off" class="form-control" placeholder="Saisir votre identifiant">
-                <label for="password">Mot de passe</label>
+                <label for="passwordField">Mot de passe</label>
                 <input type="password" name="passwordField" autocomplete="off" class="form-control" placeholder="Saisir votre mot de passe">
 
                 <button type="submit" id="btnLogin" class="btn btn-success" disabled>Connexion</button>
+
             </form>
         </div>
 
+        <!-- Bas de page -->
         <footer>
             &copy; Aelion 2018
         </footer>
     </div>
 
-    <!--Premier script Javascript-->
+    <!-- Scripts Javascript -->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="./src/modules/toaster/toast.class.js"></script>
-    <script src="./src/user/user.class.js"></script>   
+    <script src="./src/user/user.class.js"></script>
     <script src="./src/user/login.class.js"></script>
     <script src="./assets/javascript/main.js"></script>
 </body>
