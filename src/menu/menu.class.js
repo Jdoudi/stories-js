@@ -5,7 +5,7 @@
  * @version 1.0.0
 */
 
-class Menu {
+export class Menu {
     constructor() {
         this.options = [
             {title: 'Accueil', active: 'always'},
