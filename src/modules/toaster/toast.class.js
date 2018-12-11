@@ -5,7 +5,7 @@
  * @version 1.0.0
  */
 
-class Toast {
+export class Toast {
     constructor(params) {
         if (!params.hasOwnProperty('background')) {
 
@@ -44,8 +44,10 @@ class Toast {
 
         //On lui ajoute les classes
         toaster
-            .addClass(this.backgroundClass)
             .addClass('toast')
+            .addClass(this.backgroundClass)
+            .addClass('animated')
+            .addClass('fadeInDownBig')
             .html(this.message);
 
         // Ajoute le toaster au document lui-même
@@ -54,6 +56,13 @@ class Toast {
         //Affiche pendant un certain temps
         setTimeout(
             function () {
+                setTimeout(
+                    function() {
+                        toaster
+                        .addClass('fadeOutRightBig')
+                    }
+                    (this.duration / 2 ) * 1000
+                );
                 //Ici, quand on arrive au bout de l'intervalle de temps
                 toaster.remove();
             },
