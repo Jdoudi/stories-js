@@ -9,7 +9,7 @@ export class Login {
         $(document).attr('title', 'Identification');
 
         //Modifier le titre de la page
-        $('#main-title').html('Identifiez-vous');
+        $('#main-title').html('Page d\'authentification');
 
         //Définition des attributs
         this.login = $("[name=loginField]");
