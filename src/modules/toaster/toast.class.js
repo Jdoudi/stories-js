@@ -48,7 +48,7 @@ export class Toast {
             .addClass(this.backgroundClass)
             .addClass('animated')
             .addClass('fadeInDownBig')
-            .html(this.message);
+            .html(this.message.bold());
 
         // Ajoute le toaster au document lui-même
         toaster.appendTo($('body'));

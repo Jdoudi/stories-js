@@ -67,7 +67,7 @@ export class Login {
 
                 //Gère l'authentification..
                 if (user.authenticate()) {
-                    console.log('Ok');
+                    console.log('Authentification réussie');
                     // Instancie le menu...
                     const menu = new Menu();
                     menu.setUser(user);
@@ -83,7 +83,7 @@ export class Login {
                     const toast = new Toast(
                         {
                             'message': 'Ce login ou ce mot de passe ne correspond à aucun utilisateur',
-                            'duration': 2
+                            'duration': 5
                         }
                     );
                     toast.toastIt();

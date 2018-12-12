@@ -330,7 +330,7 @@ var Toast = exports.Toast = function () {
             var toaster = $('<div>');
 
             //On lui ajoute les classes
-            toaster.addClass('toast').addClass(this.backgroundClass).addClass('animated').addClass('fadeInDownBig').html(this.message);
+            toaster.addClass('toast').addClass(this.backgroundClass).addClass('animated').addClass('fadeInDownBig').html(this.message.bold());
 
             // Ajoute le toaster au document lui-même
             toaster.appendTo($('body'));
@@ -440,7 +440,7 @@ var Login = exports.Login = function () {
 
                 //Gère l'authentification..
                 if (user.authenticate()) {
-                    console.log('Ok');
+                    console.log('Authentification réussie');
                     // Instancie le menu...
                     var menu = new _menu.Menu();
                     menu.setUser(user);
@@ -455,7 +455,7 @@ var Login = exports.Login = function () {
                     //On peut instancier un toast
                     var toast = new _toast.Toast({
                         'message': 'Ce login ou ce mot de passe ne correspond à aucun utilisateur',
-                        'duration': 2
+                        'duration': 5
                     });
                     toast.toastIt();
                 }
