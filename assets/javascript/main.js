@@ -19,4 +19,7 @@ router
     )
     .add(
         new Route('/logout', 'LogoutController')
+    )
+    .add(
+        new Route('/errors', 'Error')
     );

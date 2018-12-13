@@ -11,8 +11,8 @@ import { Route } from './route.class';
 import { LoginController } from './../../user/login/loginController.class';
 import { MyStories } from './../../stories/myStories.class';
 import { LogoutController } from './../../user/logout/logoutController.class';
-import { UserService } from './../../services/user-service.class';
 import { Error } from './../../errors/error.class';
+import { UserService } from './../../services/user-service.class';
 
 
 const controllers = {
@@ -28,17 +28,17 @@ export class Router {
 
         let router = this;
 
-        //Définit le listener sur les routes
+        // Définit le listener sur les routes
         $(window).on(
             'hashchange',
-            function (event) {
+            function(event) {
                 router.getRoute()
             }
         );
 
         $(window).on(
             'load',
-            function (event) {
+            function(event) {
                 router.getRoute()
             }
         );
@@ -58,7 +58,7 @@ export class Router {
 
         // Instance d'un contrôleur vide
         let controller = {};
-
+        
         if (!route) {
             controller = new Error();
         } else {
