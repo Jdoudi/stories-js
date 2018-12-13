@@ -10,14 +10,16 @@ import { Route } from './route.class';
 
 import { LoginController } from './../../user/login/loginController.class';
 import { MyStories } from './../../stories/myStories.class';
-import {LogoutController} from './../../user/logout/logoutController.class';
+import { LogoutController } from './../../user/logout/logoutController.class';
 import { UserService } from './../../services/user-service.class';
+import { Error } from './../../errors/error.class';
 
 
 const controllers = {
     LoginController,
     LogoutController,
-    MyStories
+    MyStories,
+    Error
 }
 
 export class Router {
@@ -58,7 +60,7 @@ export class Router {
         let controller = {};
 
         if (!route) {
-            // Aucun contrôleur associé à cette route
+            controller = new Error();
         } else {
             if (url === '/') {
                 // On vérifie l'utilisateur
@@ -88,9 +90,8 @@ export class Router {
                     controller = new controllers[route.getController()]();
                 }
             }
-            // A la fin, on charge la vue
-            controller.getView();
         }
-
+        // A la fin, on charge la vue
+        controller.getView();
     }
 }
