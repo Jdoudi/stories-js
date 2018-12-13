@@ -11,6 +11,7 @@
     <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="./node_modules/animate.css/animate.css" rel="stylesheet">
     <link href="./assets/css/custom.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -18,7 +19,7 @@
     <!-- Conteneur de page : responsive en plus !!! -->
     <div class="container">
         <header>
-            <h1 id="main-title"></h1>
+            <h2 id="main-title"></h2>
         </header>
 
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4193a1;">
@@ -64,27 +65,14 @@
         <!-- Docking de la SPA (Single Page Application -->
         <div app>
             <!-- Ici, le contenu de l'application finale identifié par l'attribut "app"-->
-            <form id="loginForm" class="form-group">
-                <label for="loginField">Identifiant</label>
-                <input type="text" name="loginField" autocomplete="off" class="form-control" placeholder="Saisir votre identifiant">
-                <label for="passwordField">Mot de passe</label>
-                <input type="password" name="passwordField" autocomplete="off" class="form-control" placeholder="Saisir votre mot de passe">
 
-                <button type="submit" id="btnLogin" class="btn btn-success" disabled>Connexion</button>
-
-            </form>
         </div>
-
-        <!-- Bas de page -->
-        <footer>
-            &copy; Aelion 2018
-        </footer>
     </div>
 
     <!-- Scripts Javascript : le script build remplace les précédents-->
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="./build/main.bundle.js"></script> 
+    <script src="./build/main.bundle.js"></script>
 </body>
 
 </html>
