@@ -8,15 +8,17 @@
 export class Menu {
     constructor() {
         this.options = [
-            {title: 'Accueil', active: 'always'},
-            {title: 'Toutes les Stories', active: 'isAdmin'},
-            {title: 'Mes stories', active: 'always'},
-            {title: 'Mon compte', active: 'always', options : [
-                {title: 'Mes préférences'},
-                {title: 'Changer de mot de passe'},
-                {divider: true},
-                {title: 'Déconnexion'}
-            ]}
+            { title: 'Accueil', active: 'always', path: '/' },
+            { title: 'Toutes les Stories', active: 'isAdmin', path: '/allstories' },
+            { title: 'Mes stories', active: 'always', path: '/mystories' },
+            {
+                title: 'Mon compte', active: 'always', options: [
+                    { title: 'Mes préférences', path: '/settings' },
+                    { title: 'Changer de mot de passe', path: '/changepassword' },
+                    { divider: true },
+                    { title: 'Déconnexion', path: '/logout' }
+                ]
+            }
         ];
     }
 
@@ -55,6 +57,22 @@ export class Menu {
         dropdownBlock.removeClass('hidden');
     }
 
+        /**
+        * Nettoie le menu Utilisateur à la déconnexion
+        */
+    clear() {
+        // On définit les options du menu
+        const dropdownBlock = $('#userMenuOptions');
+
+        // Virer les options existantes
+        dropdownBlock.empty();
+
+        dropdownBlock.addClass('hidden');
+
+        const userMenu = $('#userMenu');
+        userMenu.html('Utilisateur');
+    }
+
     _makeOption(option) {
         let item = null;
 
@@ -63,7 +81,7 @@ export class Menu {
             item = $('<a>');
             item
                 .addClass('dropdown-item')
-                .attr('href', '#')
+                .attr('href', '#' + option.path)
                 .html(option.title);
             // <a class="dropdown-item" href="#">Action</a>
         } else {
@@ -80,7 +98,7 @@ export class Menu {
     _activate() {
         for (let option of this.options) {
             const item = $('[title="' + option.title + '"]');
-            
+
             if (option.active === 'always') {
                 item.removeClass('disabled');
             } else if (option.active === 'isAdmin' && this.user.group === 'Administrateur') {
