@@ -30,18 +30,45 @@ export class User {
     * @return boolean
     */
     authenticate() {
-        if (this.userName === 'jlaubert' && this.password === 'jla') {
-            this.group = 'Administrateur';
-            // Ajout de l'utilisateur dans localStorage
-            const persistentUser = {
-                userName: this.userName,
-                group: this.group
-            };
-            localStorage.setItem('storiesUser', JSON.stringify(persistentUser));
+        //Appel vers le serveur :
+        // GET http://localhost:3000/users/:login/:password
 
-            return true;
-        }
+        let user = this;
+        return new Promise((resolve) => {
+            $.ajax({
+                url: 'http://localhost:3000/users/' + this.userName + '/' + this.password,
+                method: 'get',
+                responseType: 'json',
+                success: function (datas) {
+                    const srvUser = datas[0];
 
-        return false;
+                    if (srvUser) {
+                        user.name = srvUser.nom;
+                        user.forname = srvUser.prenom;
+                        user.userName = srvUser.identifiant;
+                        user.group = srvUser.Fonction;
+
+                        const persistenUser = {
+                            userName: user.userName,
+                            group: user.group
+                        };
+
+                        // On ajoute l'utilisateur au localStorage
+                        localStorage.setItem('storiesUser', JSON.stringify(user));
+
+                        // C'est bon, j'ai bien un utilisateur
+                        resolve(true);
+                    } else {
+                        // Pas d'utilisateur 
+                        resolve(false);
+                    }
+                },
+                error: function (xhr, error) {
+                    resolve(false);
+                },
+            });
+
+
+        })
     }
 }
